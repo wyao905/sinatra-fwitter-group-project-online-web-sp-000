@@ -45,6 +45,7 @@ class TweetsController < ApplicationController
   end
   
   patch '/tweets/:id/edit' do
+    binding.pry
     tweet = Tweet.find(params[:id])
     tweet.content = params[:content]
     tweet.save
