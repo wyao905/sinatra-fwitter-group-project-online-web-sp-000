@@ -45,9 +45,14 @@ class TweetsController < ApplicationController
   end
   
   patch '/tweets/:id/edit' do
-    binding.pry
     tweet = Tweet.find(params[:id])
     tweet.content = params[:content]
     tweet.save
+  end
+  
+  delete '/tweets/:id/delete' do
+    tweet = Tweet.find(params[:id])
+    tweet.content = params[:content]
+    redirect "/tweets"
   end
 end
